@@ -1,0 +1,12 @@
+{
+    "name": "administrator/rabbitmq",
+    "authors": [
+        {
+            "name": "zht",
+            "email": "935468215@qq.com"
+        }
+    ],
+    "require": {
+        "php-amqplib/php-amqplib": "2.7.*"
+    }
+}
