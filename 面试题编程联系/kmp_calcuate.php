@@ -20,7 +20,8 @@
  * －"ABCDAB"的前缀为[A, AB, ABC, ABCD,ABCDA]，后缀为[BCDAB, CDAB, DAB, AB, B]，共有元素为"AB"，长度为2；
  * －"ABCDABD"的前缀为[A, AB, ABC, ABCD, ABCDA, ABCDAB]，后缀为[BCDABD,CDABD, DABD, ABD, BD, D]，共有元素的长度为0。
  * @param string $Pstring
- * @param array $next
+ * @return mixed
+ * @internal param array $next
  */
 function makeNext(string $Pstring){
 
@@ -46,6 +47,10 @@ function makeNext(string $Pstring){
 ////生成位移表
 //makeNext('abcdabd');
 
+/**
+ * @param $Tstring
+ * @param $Pstring
+ */
 function kmp($Tstring, $Pstring){
 
     $n = strlen($Tstring); // 字符串
@@ -55,10 +60,6 @@ function kmp($Tstring, $Pstring){
 
     for ($i=0,$q = 0; $i < $n; ++$i)
     {
-        var_dump('q:'.$q.'\\n' );
-        var_dump('i:'.$i.'\\n' );
-        var_dump($Pstring[$q]);
-        var_dump($Tstring[$i]);
         while($q > 0 && $Pstring[$q] != $Tstring[$i]){
             $q = $next[$q-1];
         }
