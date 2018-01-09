@@ -25,7 +25,7 @@
  */
 function makeNext(string $Pstring){
 
-    $m = strlen($Pstring); // 此时为数组
+    $m = strlen($Pstring);
     $next[0] = 0;
     for ($q = 1, $k = 0; $q < $m; ++$q)
     {
