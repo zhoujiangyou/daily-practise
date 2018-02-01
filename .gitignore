@@ -1,3 +1,2 @@
 rabbitmq/composer.lock
-rabbitmq/vendor/*
-
+rabbitmq/vendor
