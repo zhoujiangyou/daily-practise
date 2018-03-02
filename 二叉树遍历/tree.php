@@ -34,6 +34,8 @@ function preOrder($root){
 }
 
 
+
+
 //中序遍历 :先访问左节点，然后根节点，最后右节点
 
 function midOrder($root){
@@ -50,7 +52,6 @@ function midOrder($root){
         $center_node=$center_node->right;
     }
 }
-
 
 //后序遍历:先遍历左子树，然后遍历右子树，最后访问根节点；同样，在遍历左右子树的时候同样要先遍历左子树，然后遍历右子树，最后访问根节点
 function endOrder($root){
@@ -70,6 +71,28 @@ function endOrder($root){
     while (!empty($visit_stack)) {
         $center_node = array_pop($visit_stack);
         echo $center_node->value . ' ';
+    }
+}
+
+function hou($root){
+
+    $stack=[];
+    $visit=[];
+    array_push($stack,$root);
+    while(!empty($stack)){
+        $center = array_pop($stack);
+        array_push($visit,$center);
+        if($center->left!=null){
+            array_push($stack,$center->left);
+        }
+        if($center->right!=null){
+            array_push($stack,$center->right);
+        }
+    }
+    while(!empty($visit)){
+
+        $center = array_pop($visit);
+        echo $center->value;
     }
 }
 
